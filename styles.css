@@ -28,10 +28,40 @@ header h1{
 
 .discography main{
 grid-column: 1/-1;
-display: grid;
 
 }
 
+.discography main > section{
+    display: grid;
+    gap: 1.3rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.collapsible{
+   height: 0px; 
+   overflow: hidden;
+}
+
+.collapsible.open{
+    height: auto;
+
+}
+
+.discography h2:after{
+   display: inline-block;
+   content: "+";
+   margin-left: 1rem;
+   color: #ccc;
+   font-weight: 100;
+    transform: all 0.2s;
+
+}
+
+.discography h2.open:after,
+.discography h2:hover:after{
+   transform: rotate(45deg); 
+
+}
 /* .album > img + section > h3{
 
 } */
@@ -39,6 +69,8 @@ display: grid;
 .album{
     display: grid;
     overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #ccc;
 }
 
 .album:hover > section{
@@ -62,7 +94,8 @@ display: grid;
 }
 
 .album h3{
-    text-transform: uppercase
+    text-transform: uppercase;
+    padding: 2rem;
 }
 
 @media only screen and (min-width:1000px){
