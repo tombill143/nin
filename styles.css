@@ -7,8 +7,15 @@ body, html{
     margin: 0;
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+}
+
 #wrapper{
     margin: 1rem;
+    display: grid;
+    grid-template-columns: 200px 1fr;
 }
 
 header h1{
@@ -18,3 +25,53 @@ header h1{
     height: 80px;
     text-indent: -999px;
 }
+
+.discography main{
+grid-column: 1/-1;
+display: grid;
+
+}
+
+/* .album > img + section > h3{
+
+} */
+
+.album{
+    display: grid;
+    overflow: hidden;
+}
+
+.album:hover > section{
+    transform: translateX(0%);
+}
+
+.album > * {
+    width: 100%;
+    position: relative;
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+}
+
+.album section{
+    z-index: 10;
+    background: rgb(255, 255, 255, 0.7);
+    display: grid;
+    place-content: center;
+    transform: translateX(100%);
+    transition: all .3s;
+}
+
+.album h3{
+    text-transform: uppercase
+}
+
+@media only screen and (min-width:1000px){
+    header{
+        grid-column: 1/ -1;
+    }
+
+    .discography main{
+        grid-column: 2/-1;
+        }
+}
+
